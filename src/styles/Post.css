@@ -1,0 +1,27 @@
+.post {
+    background-color: white;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    box-shadow: 2px 2px 3px #00000020;
+    border-left: 5px solid #d17310;
+}
+
+.post-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post h2 {
+    font-size: 24px;
+}
+
+.post-timestamp {
+    opacity: 0.6;
+}
+
+.username {
+    color: #d17310;
+}
