@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Lato&display=swap');
+
+body {
+    background: linear-gradient(#d9bd98, #edd1ab) no-repeat;
+    min-height: 100vh;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    font-family: 'Fredoka', sans-serif;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+main {
+    padding: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.greeting {
+    background-color: white;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 20px 20px 20px 0;
+    margin-bottom: 20px;
+    position: relative;
+    letter-spacing: 1px;
+}

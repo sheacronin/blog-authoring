@@ -1,0 +1,41 @@
+header {
+    background-color: #d17310;
+    padding: 20px;
+    color: white;
+    border-bottom: 5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+}
+
+header a {
+    color: white;
+}
+
+header a:hover,
+header button:hover {
+    color: #d9bd98;
+}
+
+header button {
+    color: white;
+    font: inherit;
+    border: none;
+    background: none;
+}
+
+.site-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-desc {
+    font-style: italic;
+}
