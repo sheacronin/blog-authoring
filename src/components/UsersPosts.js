@@ -20,7 +20,7 @@ function UsersPosts({ user }) {
         <div>
             {user && <div className="greeting">Hello, {user.displayName}!</div>}
             {posts.map((post) => (
-                <Post key={post._id} post={post} />
+                <Post key={post._id} post={post} setPosts={setPosts} />
             ))}
         </div>
     );
