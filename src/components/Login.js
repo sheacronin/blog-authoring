@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Login.css';
+import '../styles/Forms.css';
 
 function Login({ setUser }) {
     let navigate = useNavigate();
@@ -33,7 +33,7 @@ function Login({ setUser }) {
     }
 
     return (
-        <form className="login-form" onSubmit={handleLoginFormSubmission}>
+        <form className="form" onSubmit={handleLoginFormSubmission}>
             <h2>Login</h2>
 
             <label htmlFor="username">Username:</label>

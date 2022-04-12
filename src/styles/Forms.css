@@ -1,4 +1,4 @@
-.login-form {
+.form {
     background-color: white;
     margin: 5px auto;
     border-radius: 10px;
@@ -8,26 +8,28 @@
     display: grid;
 }
 
-.login-form h2 {
+.form h2 {
     font-size: 24px;
 }
 
-.login-form label {
+.form label {
     margin: 20px 0 10px 0;
 }
 
-.login-form input {
+.form input,
+.form textarea {
     border: 1px solid #c7c7c7;
     padding: 10px;
     font: inherit;
     border-radius: 5px;
 }
 
-.login-form input:focus {
+.form input:focus,
+.form textarea:focus {
     outline: 2px solid #d17310;
 }
 
-.login-form button {
+.form button {
     padding: 5px 10px;
     background-color: #d17310;
     border: none;

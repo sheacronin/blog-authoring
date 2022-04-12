@@ -6,6 +6,7 @@ import UsersPosts from './components/UsersPosts';
 import Welcome from './components/Welcome';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import CreatePost from './components/CreatePost';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -64,6 +65,7 @@ function App() {
                         element={<Login setUser={setUser} />}
                     />
                     <Route exact path="/signup" element={<SignUp />} />
+                    <Route exact path="/create-post" element={<CreatePost />} />
                 </Routes>
             </main>
         </Router>

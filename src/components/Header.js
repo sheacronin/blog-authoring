@@ -25,9 +25,14 @@ function Header({ user, setUser }) {
                             </li>
                         </>
                     ) : (
-                        <li>
-                            <button onClick={logoutUser}>Logout</button>
-                        </li>
+                        <>
+                            <li>
+                                <Link to="/create-post">Create Post</Link>
+                            </li>
+                            <li>
+                                <button onClick={logoutUser}>Logout</button>
+                            </li>
+                        </>
                     )}
                 </ul>
             </nav>

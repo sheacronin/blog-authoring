@@ -1,0 +1,28 @@
+.create-post {
+    max-width: 600px;
+}
+
+.create-post textarea {
+    resize: none;
+    height: 200px;
+}
+
+.create-post-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-post-info label {
+    margin: 0;
+}
+
+.is-published {
+    display: flex;
+    align-items: center;
+}
+
+.create-post input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}

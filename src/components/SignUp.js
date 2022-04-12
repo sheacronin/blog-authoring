@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Login.css';
+import '../styles/Forms.css';
 
 function SignUp() {
     let navigate = useNavigate();
@@ -41,7 +41,7 @@ function SignUp() {
     }
 
     return (
-        <form className="login-form" onSubmit={handleSignUpFormSubmission}>
+        <form className="form" onSubmit={handleSignUpFormSubmission}>
             <h2>Sign Up</h2>
 
             <label htmlFor="username">Username:</label>
