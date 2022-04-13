@@ -9,7 +9,14 @@ function UsersPosts({ user }) {
 
         async function fetchCurrentUsersPosts() {
             const response = await fetch(
-                `http://localhost:3001/users/${user.id}/posts`
+                `http://localhost:3001/users/${user.id}/posts`,
+                {
+                    method: 'GET',
+                    headers: {
+                        Authorization:
+                            'Bearer ' + localStorage.getItem('token'),
+                    },
+                }
             );
             const data = await response.json();
             return data;
