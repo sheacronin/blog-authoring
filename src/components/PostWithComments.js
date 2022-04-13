@@ -16,12 +16,16 @@ function PostWithComments() {
         });
 
         async function fetchPost() {
-            const res = await fetch(`http://localhost:3001/posts/${postId}`, {
-                method: 'GET',
-                headers: {
-                    Authorization: 'Bearer ' + localStorage.getItem('token'),
-                },
-            });
+            const res = await fetch(
+                `https://blog-api-sc.herokuapp.com/posts/${postId}`,
+                {
+                    method: 'GET',
+                    headers: {
+                        Authorization:
+                            'Bearer ' + localStorage.getItem('token'),
+                    },
+                }
+            );
             const data = await res.json();
             return data;
         }

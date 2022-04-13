@@ -9,7 +9,7 @@ function Post({ post, setPosts, setPost, isSinglePost }) {
 
     async function togglePostPublished() {
         const res = await fetch(
-            `http://localhost:3001/posts/${post._id}/toggle-published`,
+            `https://blog-api-sc.herokuapp.com/posts/${post._id}/toggle-published`,
             {
                 method: 'PUT',
                 credentials: 'include',
@@ -54,7 +54,7 @@ function Post({ post, setPosts, setPost, isSinglePost }) {
     }
 
     async function deletePost() {
-        await fetch(`http://localhost:3001/posts/${post._id}`, {
+        await fetch(`https://blog-api-sc.herokuapp.com/posts/${post._id}`, {
             method: 'DELETE',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('token'),

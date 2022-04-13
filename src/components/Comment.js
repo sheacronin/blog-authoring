@@ -4,7 +4,7 @@ import '../styles/Comment.css';
 function Comment({ comment, postId, setPost }) {
     async function deleteComment() {
         await fetch(
-            `http://localhost:3001/posts/${postId}/comments/${comment._id}`,
+            `https://blog-api-sc.herokuapp.com/posts/${postId}/comments/${comment._id}`,
             {
                 method: 'DELETE',
                 headers: {

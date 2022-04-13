@@ -24,7 +24,7 @@ function App() {
 
         async function fetchCurrentUser() {
             const res = await fetch(
-                'http://localhost:3001/users/current-user',
+                'https://blog-api-sc.herokuapp.com/users/current-user',
                 {
                     method: 'GET',
                     credentials: 'include',

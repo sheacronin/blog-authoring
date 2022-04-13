@@ -12,15 +12,18 @@ function Login({ setUser }) {
 
         const { username, password } = e.target.elements;
 
-        const res = await fetch('http://localhost:3001/users/login', {
-            method: 'POST',
-            body: JSON.stringify({
-                username: username.value,
-                password: password.value,
-            }),
-            credentials: 'include',
-            headers: { 'Content-Type': 'application/json' },
-        });
+        const res = await fetch(
+            'https://blog-api-sc.herokuapp.com/users/login',
+            {
+                method: 'POST',
+                body: JSON.stringify({
+                    username: username.value,
+                    password: password.value,
+                }),
+                credentials: 'include',
+                headers: { 'Content-Type': 'application/json' },
+            }
+        );
         const data = await res.json();
 
         if (res.status === 200) {

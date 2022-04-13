@@ -13,7 +13,7 @@ function SignUp() {
         const { username, displayName, password, confirmPassword } =
             e.target.elements;
 
-        const res = await fetch('http://localhost:3001/users/', {
+        const res = await fetch('https://blog-api-sc.herokuapp.com/users/', {
             method: 'POST',
             body: JSON.stringify({
                 username: username.value,

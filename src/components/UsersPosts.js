@@ -9,7 +9,7 @@ function UsersPosts({ user }) {
 
         async function fetchCurrentUsersPosts() {
             const response = await fetch(
-                `http://localhost:3001/users/${user.id}/posts`,
+                `https://blog-api-sc.herokuapp.com/users/${user.id}/posts`,
                 {
                     method: 'GET',
                     headers: {
