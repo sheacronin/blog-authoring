@@ -1,0 +1,45 @@
+.comments {
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px auto 0 auto;
+    display: grid;
+    max-width: 600px;
+    box-shadow: 2px 2px 3px #00000020;
+}
+
+.comment {
+    background-color: #fefefe;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #00000020;
+    margin-top: 10px;
+}
+
+.comment-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0.6;
+}
+
+.comment-author {
+    font-style: italic;
+}
+
+.delete-comment-container {
+    text-align: right;
+}
+
+.delete-comment-container button {
+    font: inherit;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.delete-comment-container button:hover {
+    background-color: #b64d4d;
+    color: white;
+}

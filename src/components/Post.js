@@ -1,8 +1,8 @@
 import '../styles/Post.css';
 import { formatRelative, parseISO } from 'date-fns';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-function Post({ post, setPosts }) {
+function Post({ post, setPosts, setPost, isSinglePost }) {
     let navigate = useNavigate();
 
     async function togglePostPublished() {
@@ -19,16 +19,24 @@ function Post({ post, setPosts }) {
 
         const data = await res.json();
 
-        setPosts((prevPosts) => {
-            const newPosts = [...prevPosts];
-            const index = newPosts.findIndex((aPost) => aPost._id === post._id);
-            newPosts[index] = {
-                ...newPosts[index],
-                isPublished: data.post.isPublished,
-            };
+        if (!isSinglePost) {
+            setPosts((prevPosts) => {
+                const newPosts = [...prevPosts];
+                const index = newPosts.findIndex(
+                    (aPost) => aPost._id === post._id
+                );
+                newPosts[index] = {
+                    ...newPosts[index],
+                    isPublished: data.post.isPublished,
+                };
 
-            return newPosts;
-        });
+                return newPosts;
+            });
+        } else {
+            setPost((prevPost) => {
+                return { ...prevPost, isPublished: !prevPost.isPublished };
+            });
+        }
     }
 
     function handleEditPostClick() {
@@ -55,6 +63,11 @@ function Post({ post, setPosts }) {
                     {post.isPublished ? 'Unpublish' : 'Publish'}
                 </button>
             </div>
+            {!isSinglePost && (
+                <div className="view-comments">
+                    <Link to={`/posts/${post._id}`}>View Comments</Link>
+                </div>
+            )}
         </article>
     );
 }

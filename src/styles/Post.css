@@ -55,3 +55,16 @@
 .post-publish button:hover {
     opacity: 1;
 }
+
+.view-comments {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.view-comments a {
+    color: #2d765d;
+}
+
+.view-comments a:hover {
+    text-decoration: underline;
+}

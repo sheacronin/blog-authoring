@@ -12,6 +12,7 @@ header nav ul {
     display: flex;
     gap: 30px;
     font-size: 20px;
+    align-items: center;
 }
 
 header a {

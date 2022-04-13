@@ -7,6 +7,7 @@ import Welcome from './components/Welcome';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import PostForm from './components/PostForm';
+import PostWithComments from './components/PostWithComments';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -69,6 +70,10 @@ function App() {
                     <Route
                         path="/edit-post/:postId"
                         element={<PostForm isEditing={true} />}
+                    />
+                    <Route
+                        path="/posts/:postId"
+                        element={<PostWithComments />}
                     />
                 </Routes>
             </main>
