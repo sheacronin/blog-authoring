@@ -1,0 +1,28 @@
+footer {
+    background-color: #2d765d;
+    border-top: 5px solid white;
+    padding: 20px;
+    text-align: center;
+    color: #d9bd98;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+    footer {
+        flex-direction: column;
+        gap: 0;
+    }
+}

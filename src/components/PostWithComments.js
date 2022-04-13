@@ -44,6 +44,9 @@ function PostWithComments() {
                         setPost={setPost}
                     />
                 ))}
+                {post.comments.length === 0 && (
+                    <p>There are no comments on this post</p>
+                )}
             </section>
         </>
     );

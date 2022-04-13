@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import PostForm from './components/PostForm';
 import PostWithComments from './components/PostWithComments';
+import Footer from './components/Footer';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -77,6 +78,7 @@ function App() {
                     />
                 </Routes>
             </main>
+            <Footer />
         </Router>
     );
 }

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Lato&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: linear-gradient(#d9bd98, #edd1ab) no-repeat;
     min-height: 100vh;
@@ -20,6 +24,7 @@ h1 {
 
 main {
     padding: 20px;
+    margin-bottom: 100px;
 }
 
 button:hover {
