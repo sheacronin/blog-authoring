@@ -5,7 +5,7 @@ function Welcome() {
     return (
         <article className="welcome">
             <p>
-                Welcome to the Bloggit! Please <Link to="/login">login</Link> or{' '}
+                Welcome to Bloggit! Please <Link to="/login">login</Link> or{' '}
                 <Link to="/signup">sign up</Link> for an account to start
                 authoring blog posts.
             </p>

@@ -1,7 +1,10 @@
 import '../styles/Post.css';
 import { formatRelative, parseISO } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
 
 function Post({ post, setPosts }) {
+    let navigate = useNavigate();
+
     async function togglePostPublished() {
         const res = await fetch(
             `http://localhost:3001/posts/${post._id}/toggle-published`,
@@ -28,6 +31,10 @@ function Post({ post, setPosts }) {
         });
     }
 
+    function handleEditPostClick() {
+        navigate(`/edit-post/${post._id}`);
+    }
+
     return (
         <article className="post">
             <div className="post-info">
@@ -38,7 +45,9 @@ function Post({ post, setPosts }) {
             </div>
             <p>{post.content}</p>
             <div className="post-publish">
-                <button className="edit-button">Edit</button>
+                <button className="edit-button" onClick={handleEditPostClick}>
+                    Edit
+                </button>
                 <p className="post-status">
                     {post.isPublished ? 'Published ✅' : 'Draft Post 📝'}
                 </p>

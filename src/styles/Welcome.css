@@ -10,3 +10,7 @@
 .welcome a {
     color: #d17310;
 }
+
+.welcome a:hover {
+    text-decoration: underline;
+}

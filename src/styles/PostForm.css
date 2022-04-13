@@ -1,18 +1,18 @@
-.create-post {
+.post-form {
     max-width: 600px;
 }
 
-.create-post textarea {
+.post-form textarea {
     resize: none;
     height: 200px;
 }
 
-.create-post-info {
+.post-form-info {
     display: flex;
     justify-content: space-between;
 }
 
-.create-post-info label {
+.post-form-info label {
     margin: 0;
 }
 
@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-.create-post input[type='checkbox'] {
+.post-form input[type='checkbox'] {
     width: 20px;
     height: 20px;
     margin-right: 10px;
