@@ -26,19 +26,22 @@
     color: #d17310;
 }
 
-.post-publish {
+.post-buttons {
     text-align: center;
     margin-top: 20px;
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 'edit delete . status publish';
+    gap: 10px;
 }
 
 .post-status {
     opacity: 0.6;
+    grid-area: status;
 }
 
-.post-publish button {
+.post-buttons button {
     font: inherit;
     border: none;
     background-color: #d17310;
@@ -48,11 +51,21 @@
     border-radius: 10px;
 }
 
-.post-publish .edit-button {
-    background-color: #2d765d;
+.post .delete-button {
+    background-color: #b64d4d;
+    color: white;
 }
 
-.post-publish button:hover {
+.post-buttons .publish-button {
+    grid-area: publish;
+}
+
+.post-buttons .edit-button {
+    background-color: #2d765d;
+    grid-area: edit;
+}
+
+.post-buttons button:hover {
     opacity: 1;
 }
 
@@ -67,4 +80,15 @@
 
 .view-comments a:hover {
     text-decoration: underline;
+}
+
+.delete-prompt {
+    margin-top: 10px;
+}
+
+.delete-prompt button {
+    font: inherit;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
 }
