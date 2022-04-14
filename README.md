@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Bloggit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack MERN application that allows users to view and leave comments on published blog posts on [Bloggit View](https://sheacronin.github.io/blog-viewing) and author and manage their own blog posts on [Bloggit Author](https://sheacronin.github.io/blog-authoring).
 
-## Available Scripts
+The user must make an account through the signup page to author blog posts or leave comments.
 
-In the project directory, you can run:
+### Links
 
-### `npm start`
+**Repositories:** [API](https://github.com/sheacronin/blog-api) • [Viewing](https://github.com/sheacronin/blog-viewing) • [Authoring](https://github.com/sheacronin/blog-authoring)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Live Sites:** [Viewing](https://sheacronin.github.io/blog-viewing) • [Authoring](https://sheacronin.github.io/blog-authoring)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Bloggit View
 
-### `npm test`
+<img width="1280" alt="Bloggit-View" src="https://user-images.githubusercontent.com/67711077/163388396-8c8ded14-83ad-4ceb-bf04-779aedb45b50.png">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The index page will load all published blog posts for the user to view. The user can also view all comments left on each blog post, with an expandable comments section. Login and sign up pages are available to create an account or log in as an existing user. If the user is logged in, they can leave a comment on any published blog post.
 
-### `npm run build`
+## Bloggit Author
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="1280" alt="Bloggit-Author" src="https://user-images.githubusercontent.com/67711077/163388417-81bbca83-78b0-455a-b24a-14d05d8bae27.png">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The index page will load all posts by the signed in user, with buttons to edit, delete, or publish/unpublish each post. There is also an option to view the comments on any post and delete any comment that has been left on your post.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Bloggit API
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The API hosted at [blog-api-sc.herokuapp.com](https://blog-api-sc.herokuapp.com/) has routes to create, read, update, and delete posts, comments, and users.
