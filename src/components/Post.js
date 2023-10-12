@@ -1,7 +1,8 @@
-import '../styles/Post.css';
-import { formatRelative, parseISO } from 'date-fns';
-import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { formatRelative, parseISO } from 'date-fns';
+import { API_BASE_URL } from '../constants';
+import '../styles/Post.css';
 
 function Post({ post, setPosts, setPost, isSinglePost }) {
     let navigate = useNavigate();
@@ -9,7 +10,7 @@ function Post({ post, setPosts, setPost, isSinglePost }) {
 
     async function togglePostPublished() {
         const res = await fetch(
-            `https://blog-api-sc.herokuapp.com/posts/${post._id}/toggle-published`,
+            `${API_BASE_URL}/posts/${post._id}/toggle-published`,
             {
                 method: 'PUT',
                 credentials: 'include',
@@ -54,7 +55,7 @@ function Post({ post, setPosts, setPost, isSinglePost }) {
     }
 
     async function deletePost() {
-        await fetch(`https://blog-api-sc.herokuapp.com/posts/${post._id}`, {
+        await fetch(`${API_BASE_URL}/posts/${post._id}`, {
             method: 'DELETE',
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('token'),

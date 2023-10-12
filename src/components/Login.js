@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../constants';
 import '../styles/Forms.css';
 
 function Login({ setUser }) {
@@ -12,18 +13,15 @@ function Login({ setUser }) {
 
         const { username, password } = e.target.elements;
 
-        const res = await fetch(
-            'https://blog-api-sc.herokuapp.com/users/login',
-            {
-                method: 'POST',
-                body: JSON.stringify({
-                    username: username.value,
-                    password: password.value,
-                }),
-                credentials: 'include',
-                headers: { 'Content-Type': 'application/json' },
-            }
-        );
+        const res = await fetch(`${API_BASE_URL}/users/login`, {
+            method: 'POST',
+            body: JSON.stringify({
+                username: username.value,
+                password: password.value,
+            }),
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+        });
         const data = await res.json();
 
         if (res.status === 200) {

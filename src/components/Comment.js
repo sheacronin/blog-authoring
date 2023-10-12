@@ -1,17 +1,15 @@
 import { formatRelative, parseISO } from 'date-fns';
+import { API_BASE_URL } from '../constants';
 import '../styles/Comment.css';
 
 function Comment({ comment, postId, setPost }) {
     async function deleteComment() {
-        await fetch(
-            `https://blog-api-sc.herokuapp.com/posts/${postId}/comments/${comment._id}`,
-            {
-                method: 'DELETE',
-                headers: {
-                    Authorization: 'Bearer ' + localStorage.getItem('token'),
-                },
-            }
-        );
+        await fetch(`${API_BASE_URL}/posts/${postId}/comments/${comment._id}`, {
+            method: 'DELETE',
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('token'),
+            },
+        });
 
         setPost((prevPost) => {
             const newPost = { ...prevPost };

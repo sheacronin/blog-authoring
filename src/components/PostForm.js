@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { API_BASE_URL } from '../constants';
 import '../styles/PostForm.css';
 
 function PostForm({ isEditing }) {
@@ -23,16 +24,12 @@ function PostForm({ isEditing }) {
         }
 
         async function fetchPost() {
-            const res = await fetch(
-                `https://blog-api-sc.herokuapp.com/posts/${postId}`,
-                {
-                    method: 'GET',
-                    headers: {
-                        Authorization:
-                            'Bearer ' + localStorage.getItem('token'),
-                    },
-                }
-            );
+            const res = await fetch(`${API_BASE_URL}/posts/${postId}`, {
+                method: 'GET',
+                headers: {
+                    Authorization: 'Bearer ' + localStorage.getItem('token'),
+                },
+            });
             const data = await res.json();
             return data;
         }
@@ -65,28 +62,24 @@ function PostForm({ isEditing }) {
         }
 
         async function editExistingPost() {
-            const res = await fetch(
-                `https://blog-api-sc.herokuapp.com/posts/${post._id}`,
-                {
-                    method: 'PUT',
-                    body: JSON.stringify({
-                        title: title.value,
-                        content: content.value,
-                        isPublished: isPublished.checked,
-                    }),
-                    credentials: 'include',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization:
-                            'Bearer ' + localStorage.getItem('token'),
-                    },
-                }
-            );
+            const res = await fetch(`${API_BASE_URL}/posts/${post._id}`, {
+                method: 'PUT',
+                body: JSON.stringify({
+                    title: title.value,
+                    content: content.value,
+                    isPublished: isPublished.checked,
+                }),
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: 'Bearer ' + localStorage.getItem('token'),
+                },
+            });
             return res;
         }
 
         async function createNewPost() {
-            const res = await fetch('https://blog-api-sc.herokuapp.com/posts', {
+            const res = await fetch(`${API_BASE_URL}/posts`, {
                 method: 'POST',
                 body: JSON.stringify({
                     title: title.value,

@@ -1,14 +1,15 @@
-import './App.css';
+import { useState, useEffect } from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { API_BASE_URL } from './constants';
 import Header from './components/Header';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import UsersPosts from './components/UsersPosts';
 import Welcome from './components/Welcome';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import PostForm from './components/PostForm';
 import PostWithComments from './components/PostWithComments';
 import Footer from './components/Footer';
+import './App.css';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -23,17 +24,13 @@ function App() {
         });
 
         async function fetchCurrentUser() {
-            const res = await fetch(
-                'https://blog-api-sc.herokuapp.com/users/current-user',
-                {
-                    method: 'GET',
-                    credentials: 'include',
-                    headers: {
-                        Authorization:
-                            'Bearer ' + localStorage.getItem('token'),
-                    },
-                }
-            );
+            const res = await fetch(`${API_BASE_URL}/users/current-user`, {
+                method: 'GET',
+                credentials: 'include',
+                headers: {
+                    Authorization: 'Bearer ' + localStorage.getItem('token'),
+                },
+            });
             if (res.status === 401) {
                 setIsLoading(false);
                 return;

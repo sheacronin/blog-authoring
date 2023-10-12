@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { API_BASE_URL } from '../constants';
 import Comment from './Comment';
 import Post from './Post';
 
@@ -16,16 +17,12 @@ function PostWithComments() {
         });
 
         async function fetchPost() {
-            const res = await fetch(
-                `https://blog-api-sc.herokuapp.com/posts/${postId}`,
-                {
-                    method: 'GET',
-                    headers: {
-                        Authorization:
-                            'Bearer ' + localStorage.getItem('token'),
-                    },
-                }
-            );
+            const res = await fetch(`${API_BASE_URL}/posts/${postId}`, {
+                method: 'GET',
+                headers: {
+                    Authorization: 'Bearer ' + localStorage.getItem('token'),
+                },
+            });
             const data = await res.json();
             return data;
         }

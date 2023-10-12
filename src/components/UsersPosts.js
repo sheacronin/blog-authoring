@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { API_BASE_URL } from '../constants';
 import Post from './Post';
 
 function UsersPosts({ user }) {
@@ -9,7 +10,7 @@ function UsersPosts({ user }) {
 
         async function fetchCurrentUsersPosts() {
             const response = await fetch(
-                `https://blog-api-sc.herokuapp.com/users/${user.id}/posts`,
+                `${API_BASE_URL}/users/${user.id}/posts`,
                 {
                     method: 'GET',
                     headers: {

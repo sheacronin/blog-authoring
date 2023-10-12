@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../constants';
 import '../styles/Forms.css';
 
 function SignUp() {
@@ -13,7 +14,7 @@ function SignUp() {
         const { username, displayName, password, confirmPassword } =
             e.target.elements;
 
-        const res = await fetch('https://blog-api-sc.herokuapp.com/users/', {
+        const res = await fetch(`${API_BASE_URL}/users/`, {
             method: 'POST',
             body: JSON.stringify({
                 username: username.value,
